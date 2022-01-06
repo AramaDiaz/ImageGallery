@@ -8,7 +8,7 @@ const Pictures = ({ name }) => {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     fetch(
-      `https://api.unsplash.com/search/photos?client_id=WCfupIO6RLzfMcY0FphqqC_e-RArvJVjADVG172VIUs&page=1&per_page=6&query=${name}`
+      `https://api.unsplash.com/search/photos?client_id=${process.env.REACT_APP_UNSPALSH_KEY}&page=1&per_page=10&query=${name}`
     )
       .then((resp) => resp.json())
       .then((data) => {
