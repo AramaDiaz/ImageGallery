@@ -40,3 +40,61 @@
 #input-bar:focus {
   outline: 1px solid cadetblue;
 }
+
+.popup {
+  padding: 10px;
+  min-width: 200px;
+}
+
+.popup .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.popup .header .name {
+  font-size: smaller;
+  font-weight: bold;
+  text-align: left;
+}
+
+.popup .header .instagram_handle {
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup .header .handler {
+  font-size: small;
+  color: darkgray;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.popup img {
+  border-radius: 50%;
+}
+
+.popup .button {
+  width: 100%;
+}
+
+.popup a {
+  color: #616161;
+  border-color: #616161;
+}
+
+.item_bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item_bar img {
+  border-radius: 50%;
+}
+
+.title {
+  padding-left: 5px;
+  cursor: pointer;
+}

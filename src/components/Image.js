@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
-import Popper from "./Popper";
+import PopperElem from "./Popper";
 
 const Image = ({ pic }) => {
   return (
@@ -20,24 +20,9 @@ const Image = ({ pic }) => {
       <ImageListItemBar
         position="bottom"
         title={
-          <span>
-            Photo by
-            <Tooltip
-              title={`Visit ${pic.user.name} profile`}
-              placement="top"
-              arrow
-            >
-              <Link
-                sx={{
-                  color: "rgba(255, 255, 255)",
-                }}
-                underline="none"
-                href={pic.user.links.html}
-                target="_blank"
-              >
-                {` ${pic.user.name}`}
-              </Link>
-            </Tooltip>
+          <span className='item_bar'>
+            <img src={pic.user.profile_image.small} alt='profile pic' />
+            <PopperElem pic={pic} />
           </span>
         }
         subtitle={`#${pic.tags[0].title}
@@ -61,7 +46,7 @@ const Image = ({ pic }) => {
                 <Link
                   underline="none"
                   download
-                  href={pic.links.download + "&force=true"}
+                  href={`${pic.links.download}&force=true`}
                 >
                   <DownloadForOfflineIcon
                     sx={{
