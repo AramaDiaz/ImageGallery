@@ -1,61 +1,24 @@
 import React from "react";
 import User from "./User";
-import PopupState, { bindPopover, bindTrigger } from 'material-ui-popup-state';
-import { Popover } from "@mui/material";
+import PopupState, { bindHover, bindPopper } from 'material-ui-popup-state';
+import Popper from "@mui/material/Popper";
 
 const PopperElem = ({ pic }) => {
   return (
-    <PopupState variant="popover" popupId="demo-popup-popover">
+    <PopupState variant="popper" popupId="demo-popup-popover">
       {(popupState) => (
         <div>
           <span className="title"
-            {...bindTrigger(popupState)}
+            {...bindHover(popupState)}
           >
             {`${pic.user.name}`}
           </span>
-          <Popover
-            {...bindPopover(popupState)}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'center',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
-            }}
+          <Popper
+            {...bindPopper(popupState)}
             disablePortal={true}
-            modifiers={[
-              {
-                name: 'flip',
-                enabled: true,
-                options: {
-                  altBoundary: true,
-                  rootBoundary: 'document',
-                  padding: 8,
-                },
-              },
-              {
-                name: 'preventOverflow',
-                enabled: false,
-                options: {
-                  altAxis: false,
-                  altBoundary: false,
-                  tether: false,
-                  rootBoundary: 'document',
-                  padding: 8,
-                },
-              },
-              {
-                name: 'arrow',
-                enabled: true,
-                // options: {
-                //   element: arrowRef,
-                // },
-              },
-            ]}
           >
             <User user={pic.user} />
-          </Popover>
+          </Popper>
         </div>
       )}
     </PopupState>

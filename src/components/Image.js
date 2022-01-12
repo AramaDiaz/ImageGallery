@@ -18,16 +18,20 @@ const Image = ({ pic }) => {
         loading="lazy"
       />
       <ImageListItemBar
+        className="item_bar"
         position="bottom"
         title={
-          <span className='item_bar'>
+          <span className='title_name'>
             <img src={pic.user.profile_image.small} alt='profile pic' />
             <PopperElem pic={pic} />
           </span>
         }
-        subtitle={`#${pic.tags[0].title}
+        subtitle={
+          <span className="tags">{`#${pic.tags[0].title}
              #${pic.tags[1].title}
              #${pic.tags[2].title}`}
+          </span>
+        }
         actionIcon={
           <span>
             <Tooltip title="Likes" placement="top" arrow>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./App.scss";
 import ImageSearch from "./components/ImageSearch";
 import Pictures from "./components/Pictures";
 
