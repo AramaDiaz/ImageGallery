@@ -28,6 +28,25 @@ $margin: 5px;
     font-weight: 500;
   }
 
+  .no_results {
+    margin-top: 5px;
+    font-weight: 400;
+  }
+
+  .display {
+    .masonry-grid {
+      position: relative;
+      top: 20px;
+      display: flex;
+      margin-left: -20px;
+      width: auto;
+    }
+    .masonry-grid_column {
+      padding-left: 20px;
+      background-clip: padding-box;
+    }
+  }
+
   #input-bar {
     border: 1px solid #d3d3d3;
     padding: 10px;
@@ -95,6 +114,14 @@ $margin: 5px;
     }
     img {
       border-radius: 50%;
+    }
+  }
+
+  .spinner-box {
+    align-items: center;
+    justify-content: center;
+    .spinner {
+      color: #a9a9a9;
     }
   }
 }

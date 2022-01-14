@@ -10,7 +10,6 @@ function App() {
     e.preventDefault();
     if (e.keyCode === 13) {
       setName(e.target.value);
-      console.log(name);
     }
   };
 

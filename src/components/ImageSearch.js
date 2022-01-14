@@ -5,11 +5,11 @@ const ImageSearch = ({ handlePress }) => {
     <header className="search-box">
       <div className="container">
         <label className="text" htmlFor="input-bar">
-          Image Search
+          Image Gallery
         </label>
         <input
           id="input-bar"
-          type="text"
+          type="search"
           onKeyUp={handlePress}
           placeholder="search image"
         />
