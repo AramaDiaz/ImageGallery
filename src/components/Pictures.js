@@ -14,7 +14,7 @@ const Pictures = ({ name }) => {
 
   useEffect(() => {
     fetch(
-      `https://api.unsplash.com/search/photos?client_id=${process.env.REACT_APP_UNSPALSH_KEY}&page=1&per_page=14&query=${name}`
+      `https://api.unsplash.com/search/photos?client_id=${process.env.REACT_APP_UNSPALSH_KEY}&page=1&per_page=12&query=${name}`
     )
       .then((resp) => resp.json())
       .then((data) => {
@@ -24,10 +24,9 @@ const Pictures = ({ name }) => {
       })
       .catch(e => (console.log(e)))
   }, [name]);
-  // console.log(results);
 
   const breakpointColumns = {
-    default: 4,
+    default: 3,
     1100: 3,
     700: 2,
     500: 1
@@ -36,7 +35,6 @@ const Pictures = ({ name }) => {
   const countPic = () => {
     setCounter(counter + 1);
     setOpen(true);
-    // console.log(counter);
   }
 
   const close = () => {
@@ -50,7 +48,7 @@ const Pictures = ({ name }) => {
     <div className="display">
       {!loaded &&
         <LinearProgress />}
-      {results.length === 0 && <div className="no_results">No results matching the search...</div>}
+      {results.length === 0 && (name !== "") && <div className="no_results">No results matching the search...</div>}
       <Backdrop open={open} transitionDuration={200}
         sx={{ color: '#fff', zIndex: 2 }}>
         <CircularProgress />

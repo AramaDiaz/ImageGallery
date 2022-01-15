@@ -7,8 +7,6 @@ import Tooltip from "@mui/material/Tooltip";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 import PopperElem from "./Popper";
-import Box from '@mui/material/Box';
-import CircularProgress from "@mui/material/CircularProgress";
 
 const Image = ({ pic, count, open }) => {
   const [picLoaded, setPicLoaded] = useState(false);
@@ -20,15 +18,12 @@ const Image = ({ pic, count, open }) => {
   }
 
   const handleError = (e) => {
-    // setPicLoaded(true);
     e.target.style.display = 'none';
     count();
     open();
-
   }
 
   return (
-
     <ImageListItem>
       <img
         src={`${pic.urls.thumb}?w=248&fit=crop&auto=format`}
@@ -90,7 +85,6 @@ const Image = ({ pic, count, open }) => {
         </Box>
         } */}
     </ImageListItem>
-
   );
 };
 
